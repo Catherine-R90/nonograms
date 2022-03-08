@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.board {
+    width: 160px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin:0;
+    padding:0;
+
+    .number {
+        padding:0;
+        height: 35px;
+        width: 35px;
+        border: 1px solid rgb(22, 22, 22);
+        background-color: rgb(230, 218, 218);
+        font-size: 8px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .row-nums {
+        position: fixed;
+        top: 32px;
+        flex-direction: column;
+        left: 0;
+    }
+
+
+    .col-nums{
+        display: flex;
+        flex-direction: row;
+        padding-left: 32px;
+        top:0;
+    }
+
+    .game-board {
+        position:absolute;
+        left: 32px;
+        top: 32px;
+    }
+}
+.level {
+    margin:10px;
+}
+
+.board-row {
+    padding:0;
+    margin:0;
+    height: fit-content;
+    width: fit-content;
+
+    button {
+        padding:0;
+        height: 37px;
+        width: 37px;
+        border: 1px solid rgb(22, 22, 22);
+    }
+    .true-square {
+        background-color: rgb(34, 33, 33);
+    }
+    .false-square {
+        background-color: rgb(230, 218, 218);
+    }
+    .x-square{
+        background-color: rgb(230, 218, 218);
+        font-size: x-small;
+    }
+}
