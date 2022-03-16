@@ -1,5 +1,4 @@
 export default function Square(props) {
-
     if(props.value === true) {
         const e = Event;
         return (
@@ -9,6 +8,8 @@ export default function Square(props) {
                 onClick={(e) => props.handleClick(e, props.id)}
                 onContextMenu={(e) => props.handleClick(e, props.id)}
                 id={props.id}
+                rowindex={props.rowindex}
+                colindex={props.colindex}
             ></button>
         );
     } 
@@ -21,6 +22,8 @@ export default function Square(props) {
                 onClick={(e) => props.handleClick(e, props.id)}
                 onContextMenu={(e) => props.handleClick(e, props.id)}
                 id={props.id}
+                rowindex={props.rowindex}
+                colindex={props.colindex}
             ></button>
         );
     }
@@ -33,6 +36,8 @@ export default function Square(props) {
                 onClick={() => props.handleClick(e, props.id)}
                 onContextMenu={(e) => props.handleClick(e, props.id)}
                 id={props.id}
+                rowindex={props.rowindex}
+                colindex={props.colindex}
             >X</button>
         );
     }

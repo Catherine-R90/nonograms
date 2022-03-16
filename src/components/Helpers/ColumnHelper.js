@@ -1,6 +1,8 @@
 export default function Columns(gameRows) {
     // ASSIGN COL ROWS
-    const nums = gameRows.map((row, index) => row[index].col);
+    const nums = gameRows.map((row, index) => {
+        return row[index].colindex
+    });
 
     const gameCols = [];
 
@@ -8,7 +10,7 @@ export default function Columns(gameRows) {
         const col = [];
         gameRows.map(row=>{
             const colNum = row.map(square=>{
-                if(square.col === num) {
+                if(square.colindex === num) {
                     return col.push(square);
                 }
             });
@@ -34,7 +36,6 @@ export default function Columns(gameRows) {
     const colCount = sequences.map(seq =>{        
         let countSequences = [];
         let count = 0;
-
         seq.forEach(num=>{
             if(num === 0) {
                 countSequences.push(count);
@@ -48,16 +49,17 @@ export default function Columns(gameRows) {
         return countSequences;
     });
 
-    const colNums = colCount.map(seq=> {
+    const colNums = colCount.map((seq, index)=> {
         const onlyZero = (num) => num === 0;
 
+        const colId = index + 1;
         let obj;
 
         if(seq.every(onlyZero)) {
-            obj = {nums:"0"};
+            obj = {nums:"0",  colId:colId, complete:false};
         } else {
             const cleanNums = seq.filter(num => num !== 0);
-            obj = {nums:cleanNums.join()};
+            obj = {nums:cleanNums.join(), colId:colId, complete:false};
         }
 
         return obj;

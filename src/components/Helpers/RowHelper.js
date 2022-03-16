@@ -29,16 +29,15 @@ export default function Rows(gameRows) {
         return countSequences;
     });
 
-    const rowNums = rowCount.map(seq=> {
+    const rowNums = rowCount.map((seq, index)=> {
         const onlyZero = (num) => num === 0;
-
         let obj;
-
+        const rowId = index +1;
         if(seq.every(onlyZero)) {
-            obj = {nums:"0"};
+            obj = {nums:"0", rowId:rowId, complete:false};
         } else {
             const cleanNums = seq.filter(num => num !== 0);
-            obj = {nums:cleanNums.join()};
+            obj = {nums:cleanNums.join(), rowId:rowId, complete:false};
         }
 
         return obj;

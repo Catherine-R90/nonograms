@@ -1,71 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Level from "./Level";
+import rawTutorial from './rawRows/tutorial';
+import rawLevel1 from "./rawRows/level1";
+import rawLevel2 from "./rawRows/level2";
 
 export default function Game() {
+    const tutorial = <Level rawRows={rawTutorial} />;
 
-    const [levels, setLevels] = useState('');
+    const level1 = <Level rawRows={rawLevel1} />;
 
-    const Tutorial = () => {
-        const raw = [
-            [true, true, true, true, true],
-            [true, false, false, false, false],
-            [true, false, false, false, false],
-            [true, false, false, false, false],
-            [true, true, true, true, true],
-        ];
-
-        return (
-            <Level rawRows={raw}  />
-        );
-    }
-
-    const level1 = () => {
-        const raw = [
-            [false, false, false, false, false, false, false, false, false, false],
-            [false, false, false, true, false, false, false, false, false, false],
-            [false, false, true, false, false, false, true, false, false, false],
-            [false, false, false, true, false, true, false, false, false, false],
-            [false, false, true, true, true, true, true, false, false, false],
-            [false, false, true, false, false, false, true, true, true, false],
-            [false, false, true, false, false, false, true, false, true, false],
-            [false, false, true, false, false, false, true, true, true, false],
-            [false, false, true, true, true, true, true, false, false, false],
-            [true, true, true, true, true, true, true, true, true, true]
-        ];
-
-        return (
-            <Level rawRows={raw} />
-        );
-    }
-
-    const level2 = () => {
-
-        const raw = [
-            [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-            [false, false, false, false, false, false, false, true, false, false, false, false, false, false, false],
-            [false, false, false, false, false, true, true, false, true, true, false, false, false, false, false],
-            [false, false, false, true, true, false, false, false, false, false, true, true, false, false, false],
-            [false, true, true, false, false, false, false, false, false, false, false, false, true, true, false],
-            [true, false, false, false, false, false, false, true, true, false, false, false, false, false, true],
-            [false, true, true, false, false, false, true, false, false, false, false, false, true, true, false],
-            [false, false, false, true, true, true, false, false, false, false, true, true, false, false, false],
-            [false, false, false, true, true, false, true, false, true, true, true, false, false, false, false],
-            [false, false, true, false, true, false, false, true, false, false, true, false, false, false, false],
-            [false, false, true, false, true, false, false, false, false, false, true, false, false, false, false],
-            [false, true, false, false, true, true, true, true, true, true, true, false, false, false, false],
-            [false, true, false, false, true, false, false, false, false, false, true, false, false, false, false],
-            [false, false, false, false, true, true, true, true, true, true, true, false, false, false, false],
-            [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
-        ];
-        
-        return (
-            <Level rawRows={raw} />
-        )
-    }
+    const level2 = <Level rawRows={rawLevel2} />
 
     return (
-        <div>
-            {Tutorial()}
+        <div className="game">
+            {tutorial}
+            {/* {level1} */}
         </div>
     );
 }

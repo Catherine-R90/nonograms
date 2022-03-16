@@ -13,8 +13,8 @@ export default function Level(props) {
     const rowNums = Rows(gameRows);
     
     return (
-        <div>
-            <Board gameRows={gameRows} rowNums={rowNums} colNums={colNums} declareWinner={props.declareWinner} />
+        <div className='level'>
+            <Board gameRows={gameRows} rowNums={rowNums} colNums={colNums}/>
         </div>
     );
 }
