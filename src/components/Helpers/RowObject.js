@@ -8,9 +8,9 @@ export default function RowObject (rawRows) {
         rawRow.map((square, index)=>{
             const colNum = index+1;
             if(square=== true) {
-                row.push({value:true, id:"square-"+nanoid(), row:rowNum, col:colNum},);
+                row.push({value:true, id:"square-"+nanoid(), rowindex:rowNum, colindex:colNum},);
             } else {
-                row.push({value:false, id:"square-"+nanoid(), row:rowNum, col:colNum});
+                row.push({value:false, id:"square-"+nanoid(), rowindex:rowNum, colindex:colNum});
             }
         })
         gameRows.push(row);

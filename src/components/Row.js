@@ -1,6 +1,5 @@
 import { nanoid } from "nanoid";
 import Square from "./Square";
-import Number from "./Number";
 
 export default function Row(props) {
     const rows = props.row;
@@ -10,6 +9,8 @@ export default function Row(props) {
             <Square
                 value={square.value}
                 id={square.id}
+                rowindex={square.rowindex}
+                colindex={square.colindex}
                 handleClick={props.handleClick}
                 key={nanoid()} 
             />

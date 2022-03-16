@@ -1,4 +1,4 @@
-export default function WinState(gameRows, boardRows, declareWinner) {
+export default function WinState(gameRows, boardRows) {
     const gameVals = gameRows.map(gameRow => {
         const values = gameRow.map(square=>{
             return square.value;
@@ -21,8 +21,11 @@ export default function WinState(gameRows, boardRows, declareWinner) {
     const length = gameVals.length === boardVals.length;
     const matchVals = JSON.stringify(boardVals) === JSON.stringify(gameVals);
 
+    
     if(isArray === true && length === true && matchVals === true) {
-        return alert("Woohoo, you won!");
+        return true;
+    } else {
+        return false;
     }
     
 }
